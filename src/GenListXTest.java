@@ -64,4 +64,11 @@ public class GenListXTest {
         genListX.remove(1);
         assertEquals("third", genListX.get(1));
     }
+
+    @Test
+    public void testEmptyArray() throws Exception {
+        genListX.add("first");
+        genListX.remove(0);
+        assertEquals(0, genListX.size());
+    }
 }
