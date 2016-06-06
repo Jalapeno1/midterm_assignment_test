@@ -1,3 +1,5 @@
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import static org.junit.Assert.*;
@@ -12,13 +14,23 @@ import java.util.List;
  */
 public class SeleniumTest {
 
-    @Test
-    public void run(){
+    WebDriver driver;
+
+    @Before
+    public void setup(){
         System.setProperty("webdriver.chrome.driver",
                 "C:\\Users\\jons_\\Documents\\Java Libraries\\selenium libs\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+        driver = new ChromeDriver();
         driver.get("http://www.polyteknisk.dk/home");
+    }
 
+    @After
+    public void close(){
+        driver.quit();
+    }
+
+    @Test
+    public void run(){
         // i)
         driver.findElement(By.className("super_search_input_field")).sendKeys("Silberschatz");
         driver.findElement(By.className("super_search_submit_button")).click();
@@ -44,8 +56,5 @@ public class SeleniumTest {
         expected = "778,50 dkk.";
         actual = driver.findElement(By.className("price_total")).getText();
         assertEquals(expected, actual);
-
-        driver.quit();
-
     }
 }
