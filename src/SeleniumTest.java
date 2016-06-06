@@ -21,7 +21,6 @@ public class SeleniumTest {
         System.setProperty("webdriver.chrome.driver",
                 "C:\\Users\\jons_\\Documents\\Java Libraries\\selenium libs\\chromedriver.exe");
         driver = new ChromeDriver();
-        driver.get("http://www.polyteknisk.dk/home");
     }
 
     @After
@@ -31,6 +30,8 @@ public class SeleniumTest {
 
     @Test
     public void run(){
+        driver.get("http://www.polyteknisk.dk/home");
+
         // i)
         driver.findElement(By.className("super_search_input_field")).sendKeys("Silberschatz");
         driver.findElement(By.className("super_search_submit_button")).click();
