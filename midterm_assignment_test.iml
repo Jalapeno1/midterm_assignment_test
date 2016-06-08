@@ -13,5 +13,6 @@
     <orderEntry type="library" exported="" name="jmock-junit4-2.6.0" level="project" />
     <orderEntry type="library" exported="" name="selenium-java-2.53.0-srcs" level="project" />
     <orderEntry type="library" exported="" name="apache-mime4j-0.6" level="project" />
+    <orderEntry type="library" name="hamcrest-library-1.3" level="project" />
   </component>
 </module>

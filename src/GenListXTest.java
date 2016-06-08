@@ -1,6 +1,9 @@
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import static org.hamcrest.Matchers.empty;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 
 import java.io.Console;
 
@@ -19,14 +22,23 @@ public class GenListXTest {
         assertNull(genListX.list); //check if the list is null before each test
     }
 
+    //Hamcrest ex
     @Test
     public void testAdd() throws Exception {
         genListX.add("one");
         genListX.add("two");
         genListX.add("three");
-        assertEquals(3, genListX.size());
-        assertEquals("two", genListX.get(1));
+        //assertEquals(2, genListX.size());
+        assertThat(3, is(genListX.size()));
+        assertThat("two", is(genListX.get(1)));
     }
+
+    //TDD example
+//    @Test
+//    public void testDrivenDevelopment() throws Exception {
+//        int i = genListX.testMePlease("123");
+//        assertEquals(123, i);
+//    }
 
     @Test
     public void testAddAtIndex() throws Exception {
