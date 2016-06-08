@@ -1,11 +1,20 @@
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
+
+import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.empty;
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.CoreMatchers.anyOf;
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
+import static org.junit.matchers.JUnitMatchers.hasItem;
 
 import java.io.Console;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -22,23 +31,35 @@ public class GenListXTest {
         assertNull(genListX.list); //check if the list is null before each test
     }
 
-    //Hamcrest ex
-    @Test
-    public void testAdd() throws Exception {
-        genListX.add("one");
-        genListX.add("two");
-        genListX.add("three");
-        //assertEquals(2, genListX.size());
-        assertThat(3, is(genListX.size()));
-        assertThat("two", is(genListX.get(1)));
-    }
-
     //TDD example
 //    @Test
 //    public void testDrivenDevelopment() throws Exception {
 //        int i = genListX.testMePlease("123");
 //        assertEquals(123, i);
 //    }
+
+    //Hamcrest Examples
+    @Ignore
+    @Test
+    public void testUsingHamcrestShowingWhyItIsCool() throws Exception{
+        List<String> values = new ArrayList<>();
+        values.add("one");
+        values.add("two");
+        values.add("four");
+
+        assertThat(values, containsInAnyOrder("one", "two", "three"));
+    }
+
+    @Ignore
+    @Test
+    public void testNotUsingHamcrestShowingWhyItIsCool() throws Exception {
+        List<String> values = new ArrayList<>();
+        values.add("one");
+        values.add("two");
+        values.add("four");
+
+        assertEquals(Arrays.asList("one", "two", "three"), values);
+    }
 
     @Test
     public void testAddAtIndex() throws Exception {
