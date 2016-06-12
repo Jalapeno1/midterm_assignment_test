@@ -60,6 +60,7 @@ public class GenListXTest {
 
         assertEquals(Arrays.asList("one", "two", "three"), values);
     }
+    ///////
 
     @Test
     public void testAddAtIndex() throws Exception {
@@ -100,8 +101,6 @@ public class GenListXTest {
 
     @Test
     public void testEmptyArray() throws Exception {
-        genListX.add("first");
-        genListX.remove(0);
         assertEquals(0, genListX.size());
     }
 }

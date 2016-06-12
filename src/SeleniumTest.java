@@ -29,7 +29,7 @@ public class SeleniumTest {
     }
 
     @Test
-    public void run(){
+    public void databaseSystemConceptsTest(){
         driver.get("http://www.polyteknisk.dk/home");
 
         // i)
